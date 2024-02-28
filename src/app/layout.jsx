@@ -19,7 +19,7 @@ export default async function RootLayout({ children }) {
         <nav className="flex align-middle justify-between bg-[#070F2B] text-white  px-5 py-3">
           <Link className="font-bold text-2xl" href="/">My Notes</Link>
           {session && <Logout/>}
-          {!session && <Link href="/login" className="border-white border-[1px] hover:bg-gray-700 focus:bg-gray-800 focus:border-none rounded-md px-2 py-0.5">Login</Link>}
+          {!session && <Link href="/login" className="border-white border-[1px] hover:bg-purple-700 focus:bg-purple-500 focus:border-none rounded-md px-2 py-0.5 bg-purple-950">Login</Link>}
         </nav>
 
         {children}
