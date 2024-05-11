@@ -35,10 +35,14 @@ export default function Form() {
                     router.refresh()
                 }
                 if(res.error){
-                    setError(res.error)
+                    throw new Error(res.error)
                 }
             }catch(error){
-                console.log("Something went wrong")
+                console.log(error.message)
+                if(error.message=='CredentialsSignin')
+                  setError("Incorrect username or password")
+                else
+                  setError("Something went wrong")
             }finally{
                 setPending(false)
             }

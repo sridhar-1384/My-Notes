@@ -1,10 +1,7 @@
 import mongoose from "mongoose"
 
 const noteSchema=new mongoose.Schema({
-    title:{
-        type:String,
-        unique:[true,"Title exits"]
-    },
+    title:String,
     message:String
 })
 const userSchema= new mongoose.Schema(

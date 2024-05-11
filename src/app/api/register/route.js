@@ -11,7 +11,7 @@ export async function POST(req){
             return NextResponse.json({message:"specified user exists"},{status:500})
         }
         let passHash=await hash(password,10)
-        await User.create({name:name,email:email,password:passHash})
+        await User.create({name:name,email:email,password:passHash,notes:[]})
         return NextResponse.json({message:"User registered"},{status:200})
     }catch(err){
         console.log("Error entering user details")

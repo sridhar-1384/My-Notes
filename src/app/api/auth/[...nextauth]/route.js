@@ -19,12 +19,9 @@ export const authOptions = {
         try{
             await connectDB()
             let user=await User.findOne({email:credentials.email})
-            // console.log(credentials.password)
-            // console.log(user.password)
             if(!user)
                 throw new Error("User not exist")
             const passCompare=await compare(credentials.password,user.password)
-            // console.log({password:passCompare})
             if(!passCompare)
                 throw new Error("Password incorrect")
             return ({
